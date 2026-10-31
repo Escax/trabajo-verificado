@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { erroresCampos, mensajeError } from "../api/errores";
+import AuthLayout from "../components/AuthLayout";
+
 
 const OFICIOS = ["Aseo", "Domicilios", "Tutorías", "Oficios varios", "Otro"];
 
@@ -43,8 +45,9 @@ export default function Registro() {
   };
 
   return (
-    <div className="contenedor-auth">
+    <AuthLayout>
       <h1>Crear cuenta</h1>
+      <p className="subtitulo">Empieza a construir tu historial verificable en minutos.</p>
 
       <form onSubmit={enviar}>
         <label>
@@ -57,6 +60,7 @@ export default function Registro() {
           <input type="email" name="correo" value={form.correo} onChange={cambiar} required />
           {campos.correo && <small className="error">{campos.correo}</small>}
         </label>
+        <div className="fila-2">
         <label>
           Contraseña * (mínimo 8 caracteres)
           <input type="password" name="password" value={form.password} onChange={cambiar}
@@ -68,6 +72,8 @@ export default function Registro() {
           <input type="password" name="confirmar" value={form.confirmar} onChange={cambiar} required />
           {campos.confirmar && <small className="error">{campos.confirmar}</small>}
         </label>
+        </div>
+        <div className="fila-2">
         <label>
           Oficio
           <select name="oficio" value={form.oficio} onChange={cambiar}>
@@ -79,6 +85,7 @@ export default function Registro() {
           Ciudad
           <input name="ciudad" value={form.ciudad} onChange={cambiar} />
         </label>
+        </div>
         <label>
           Descripción
           <textarea name="descripcion" value={form.descripcion} onChange={cambiar} maxLength={500} rows={3} />
@@ -92,6 +99,5 @@ export default function Registro() {
       </form>
 
       <p>¿Ya tienes cuenta? <Link to="/login">Inicia sesión</Link></p>
-    </div>
-  );
+    </AuthLayout>);
 }
