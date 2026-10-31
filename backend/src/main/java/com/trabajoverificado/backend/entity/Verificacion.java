@@ -50,4 +50,7 @@ public class Verificacion {
     public boolean estaExpirada() {
         return LocalDateTime.now().isAfter(fechaExpiracion);
     }
+
+    @Version
+    private Long version;
 }
