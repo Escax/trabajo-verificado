@@ -1,0 +1,13 @@
+# Variables de entorno
+.env
+*.env
+!.env.example
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
