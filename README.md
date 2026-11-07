@@ -151,4 +151,3 @@ Opcionalmente se puede copiar `frontend/.env.example` a `frontend/.env` para cam
 
 ## Capturas
 
-[Agregar pantallazos: login, mis trabajos, solicitud de verificación, página del cliente, historial y PDF]
